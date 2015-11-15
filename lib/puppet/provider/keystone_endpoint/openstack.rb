@@ -22,15 +22,15 @@ Puppet::Type.type(:keystone_endpoint).provide(
     properties << '--region'
     properties << region
     if resource[:public_url]
-      properties << 'identity public'
+      properties << 'public'
       properties << resource[:public_url]
     end
     if resource[:internal_url]
-      properties << 'identity internal'
+      properties << 'internal'
       properties << resource[:internal_url]
     end
     if resource[:admin_url]
-      properties << 'identity admin'
+      properties << 'admin'
       properties << resource[:admin_url]
     end
      self.class.request('endpoint', 'create', properties)
