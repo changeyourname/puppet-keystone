@@ -25,14 +25,14 @@ Puppet::Type.type(:keystone_endpoint).provide(
       properties << 'public'
       properties << resource[:public_url]
     end
-    if resource[:internal_url]
-      properties << 'internal'
-      properties << resource[:internal_url]
-    end
-    if resource[:admin_url]
-      properties << 'admin'
-      properties << resource[:admin_url]
-    end
+    #if resource[:internal_url]
+    #  properties << 'internal'
+    #  properties << resource[:internal_url]
+    #end
+    #if resource[:admin_url]
+    #  properties << 'admin'
+    #  properties << resource[:admin_url]
+    #end
      self.class.request('endpoint', 'create', properties)
      @property_hash[:ensure] = :present
   end
@@ -87,8 +87,8 @@ Puppet::Type.type(:keystone_endpoint).provide(
         :id           => endpoint[:id],
         :region       => endpoint[:region],
         :public_url   => endpoint[:publicurl],
-        #:internal_url => endpoint[:internalurl],
-        #:admin_url    => endpoint[:adminurl]
+        :internal_url => endpoint[:internalurl],
+        :admin_url    => endpoint[:adminurl]
       )
     end
   end
