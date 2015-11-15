@@ -87,8 +87,8 @@ Puppet::Type.type(:keystone_endpoint).provide(
         :id           => endpoint[:id],
         :region       => endpoint[:region],
         :public_url   => endpoint[:publicurl],
-        :internal_url => endpoint[:internalurl],
-        :admin_url    => endpoint[:adminurl]
+        #:internal_url => endpoint[:internalurl],
+        #:admin_url    => endpoint[:adminurl]
       )
     end
   end
